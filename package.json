@@ -65,5 +65,10 @@
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10",
     "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "@pake/react-color": "^3.0.0",
+    "netlify-cms-widget-color": "^3.0.1",
+    "react-markdown": "^4.2.2"
   }
 }

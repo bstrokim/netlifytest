@@ -1,10 +1,10 @@
 import React from "react";
-import { List } from 'immutable';
 
 import Jumbotron from "./components/jumbotron";
-import SectionStyles from "./components/section-styles";
+import Section from "./components/section";
 
-export default class ValuesPreview extends React.Component {
+
+export default class Pages2Preview extends React.Component {
   render() {
     const {entry, getAsset} = this.props;
     
@@ -20,8 +20,8 @@ export default class ValuesPreview extends React.Component {
 
     return <div>
       <Jumbotron image={image} title={entry.getIn(["data", "title"])} subtitle={entry.getIn(["data", "subtitle"])}/>
-      {values.map((section, i) =>
-        <SectionStyles key={i} section={section}/>
+      {values.map(({type, header, footer, column_1, column_2, column_3}, i) =>
+      <Section key={i} type={type} header={header} footer={footer} column_1={column_1} column_2={column_2} column_3={column_3}/>
       )}
     </div>;
   }

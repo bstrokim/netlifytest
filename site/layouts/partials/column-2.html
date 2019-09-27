@@ -1,0 +1,22 @@
+<div class=" pv4">
+  <div class="ph3 mw7 center">
+    
+    <header>
+      {{ .section.header | markdownify }}
+    </header>
+
+    <div class="flex-ns mhn2-ns mb3">
+      <div class="ph2-ns w-50-ns">
+        {{ .section.column_1 | markdownify }}
+      </div>
+      <div class="ph2-ns w-50-ns">
+        {{ .section.column_2 | markdownify }}
+      </div>
+    </div>
+
+    <footer>
+      {{ .section.footer | markdownify }}
+    </footer>
+    
+  </div>
+</div>

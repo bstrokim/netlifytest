@@ -15,6 +15,8 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Intro Blurb", name: "description", widget: "text"}
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Focus Keyword", name: "yoast_keyword", widget: "string"}
+      - {label: "Meta Description", name: "yoast_description", widget: "string"}
   - name: "pages"
     label: "Pages"
     files:
@@ -73,10 +75,104 @@ collections: # A list of collections the CMS should be able to edit
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
-          - label: Values
-            name: values
-            widget: list
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            types:
+              - label: "One Column"
+                name: "one-column"
+                widget: object
+                fields:
+                  - label: "Background"
+                    name: "background"
+                    widget: "list"
+                    types:
+                      - label: "Color"
+                        name: "bg_color"
+                        widget: object
+                        field: {label: "Color", name: "bg_color_color", widget: "color"}
+                      - label: "Image"
+                        name: "bg_image"
+                        widget: object
+                        field: {label: "Image", name: "bg_image_image", widget: "image"}
+                      - label: "Gradient"
+                        name: "bg_gradient"
+                        widget: object
+                        fields:
+                          - {label: "Left", name: "bg_gradient_l", widget: "color"}
+                          - {label: "Right", name: "bg_gradient_r", widget: "color"}
+                  - {label: "Header", name: "header", widget: "markdown"}
+                  - {label: "Column 1", name: "column_1", widget: "markdown"}
+                  - {label: "Footer", name: "footer", widget: "markdown"}
+              - label: "Two Column"
+                name: "two-column"
+                widget: object
+                fields:
+                  - label: "Background"
+                    name: "background"
+                    widget: "list"
+                    types:
+                      - label: "Color"
+                        name: "bg_color"
+                        widget: object
+                        field: {label: "Color", name: "bg_color_color", widget: "color"}
+                      - label: "Image"
+                        name: "bg_image"
+                        widget: object
+                        field: {label: "Image", name: "bg_image_image", widget: "image"}
+                      - label: "Gradient"
+                        name: "bg_gradient"
+                        widget: object
+                        fields:
+                          - {label: "Left", name: "bg_gradient_l", widget: "color"}
+                          - {label: "Right", name: "bg_gradient_r", widget: "color"}
+                  - {label: "Header", name: "header", widget: "markdown"}
+                  - {label: "Column 1", name: "column_1", widget: "markdown"}
+                  - {label: "Column 2", name: "column_2", widget: "markdown"}
+                  - {label: "Footer", name: "footer", widget: "markdown"}
+  - name: "pages2" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Pages2" # Used in the UI, ie.: "New Post"
+    folder: "site/content/pages2" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: Image, name: image, widget: image}
+      - {label: "Focus Keyword", name: "yoast_keyword", widget: "string"}
+      - {label: "Meta Description", name: "yoast_description", widget: "string"}
+      - label: "Sections"
+        name: "sections"
+        widget: "list"
+        types:
+          - label: "One Column"
+            name: "one-column"
+            widget: object
             fields:
-              - {label: Heading, name: heading, widget: string}
-              - {label: Text, name: text, widget: text}
-              - {label: Image, name: imageUrl, widget: image}
+              - label: "Background"
+                name: "background"
+                widget: "list"
+                types:
+                  - label: "Color"
+                    name: "bg_color"
+                    widget: object
+                    field: {label: "Color", name: "bg_color_color", widget: "color"}
+                  - label: "Image"
+                    name: "bg_image"
+                    widget: object
+                    field: {label: "Image", name: "bg_image_image", widget: "image"}
+                  - label: "Gradient"
+                    name: "bg_gradient"
+                    widget: object
+                    fields:
+                      - {label: "Left", name: "bg_gradient_l", widget: "color"}
+                      - {label: "Right", name: "bg_gradient_r", widget: "color"}
+              - {label: "Header", name: "header", widget: "markdown"}
+              - {label: "Column 1", name: "column_1", widget: "markdown"}
+              - {label: "Footer", name: "footer", widget: "markdown"}
+          - label: "Two Column"
+            name: "two-column"
+            widget: object
+            fields:
+              - {label: "Header", name: "header", widget: "markdown"}
+              - {label: "Column 1", name: "column_1", widget: "markdown"}
+              - {label: "Column 2", name: "column_2", widget: "markdown"}
+              - {label: "Footer", name: "footer", widget: "markdown"}

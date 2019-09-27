@@ -4,14 +4,29 @@
 
 <div class="mw7 center ph3 pt4">
 
-  {{ range $index, $element := .Params.values }}
-    {{ if modBool $index 2 }}
-      {{ partial "media-block" $element }}
-    {{ else }}
-      {{ partial "media-block-reverse" $element }}
+  {{ range $index, $section := .Params.sections }}
+  
+    {{ $bgstyle := "" }}
+    {{range .background}}
+      {{ if eq .type "bg_color" }}
+        {{ $bgstyle = print "style=\"background-color: " .bg_color_color ";\"" }}
+      {{ else if eq .type "bg_image" }}
+        {{ $bgstyle = print "style=\"background-image: url(" .bg_image_image ");\"" }}
+      {{ else if eq .type "bg_gradient" }}
+        {{ $bgstyle = print "style=\"background: " .bg_gradient_l "; background: -moz-linear-gradient(left,  " .bg_gradient_l " 0%, " .bg_gradient_r " 100%); background: -webkit-linear-gradient(left,  " .bg_gradient_l " 0%," .bg_gradient_r " 100%); background: linear-gradient(to right,  " .bg_gradient_l " 0%," .bg_gradient_r " 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='" .bg_gradient_l "', endColorstr='" .bg_gradient_r "',GradientType=1 );\"" }}
+      {{ end }}
     {{ end }}
+    
+    <div {{ $bgstyle | safeHTMLAttr}}>
+      {{ if eq .type "one-column" }}
+        {{ partial "column-1" (dict "section" $section)  }}
+      {{ else if eq .type "two-column" }}
+        {{ partial "column-2" (dict "section" $section)  }}
+      {{ end }}
+    
+    </div>
+    
   {{ end }}
 
 </div>
-
 {{ end }}
