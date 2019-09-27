@@ -22,7 +22,7 @@ sections:
       sit amet, consectetur adipiscing elit. Suspendisse in pretium erat. Duis
       efficitur tellus magna, sit amet varius tellus laoreet sed.
     footer: '[call to action](#)'
-    header: '# This is the One-Column header. Edit'
+    header: '# This is the One-Column header. Edit. Editing some more'
     type: one-column
   - column_1: >-
       .jk.jk Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
@@ -60,3 +60,4 @@ sections:
     header: fdsgsdfg
     type: one-column
 ---
+
