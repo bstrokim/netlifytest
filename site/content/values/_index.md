@@ -1,9 +1,9 @@
 ---
-title: Values
+title: Values and asdf asdfs
 image: /img/about-jumbotron.jpg
 sections:
   - background:
-      - bg_color_color: '#9b9b9b'
+      - bg_color_color: '#f8e71c'
         type: bg_color
     column_1: >-
       This is content edit made on the live site.
@@ -24,7 +24,10 @@ sections:
     footer: '[call to action](#)'
     header: '# This is the One-Column header. Edit. Editing some more'
     type: one-column
-  - column_1: >-
+  - background:
+      - bg_image_image: /img/about-sustainable-farming.jpg
+        type: bg_image
+    column_1: >-
       .jk.jk Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
       egestas interdum tellus, at lacinia tellus mattis nec. Etiam et sodales
       orci. Cras at velit tortor. Sed sodales sed urna non ullamcorper. Lorem
